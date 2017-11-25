@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace MaintenanceAllocationChartDeveloper
 {
-    public partial class Form1 : Form
+    public partial class frmMacDevMain : Form
     {
-        public Form1()
+        public frmMacDevMain()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
