@@ -22,5 +22,17 @@ namespace MaintenanceAllocationChartDeveloper
 
         }
 
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to quit?", "Close Application?", MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.Cancel)
+            {
+                // Resume application.
+            }
+        }
     }
 }
