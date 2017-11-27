@@ -24,7 +24,7 @@ namespace MaintenanceAllocationChartDeveloper
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to quit?", "Close Application?", MessageBoxButtons.OKCancel);
+            DialogResult dialogResult = MessageBox.Show("You are about to close this application, any unsaved work will be lost.\n\nAre you sure you want to quit?", "Close Application?", MessageBoxButtons.OKCancel);
             if (dialogResult == DialogResult.OK)
             {
                 this.Close();
