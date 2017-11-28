@@ -16,7 +16,7 @@ namespace MaintenanceAllocationChartDeveloper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMacDevMain());
+            Application.Run(new FrmMacDevMain());
         }
     }
 }
