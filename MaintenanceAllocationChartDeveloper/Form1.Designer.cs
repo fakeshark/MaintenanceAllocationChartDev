@@ -52,10 +52,9 @@
             this.btnAddToolTest = new System.Windows.Forms.Button();
             this.gbxGeneralSettings = new System.Windows.Forms.GroupBox();
             this.lblTMname = new System.Windows.Forms.Label();
-            this.txtTMname = new System.Windows.Forms.TextBox();
             this.lblTMnumber = new System.Windows.Forms.Label();
-            this.txtTMnumber = new System.Windows.Forms.TextBox();
             this.tableEditor = new System.Windows.Forms.TabPage();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.fileToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
@@ -74,15 +73,15 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveQuitToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.lblVersionNum = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.lblProjectName = new System.Windows.Forms.Label();
             this.MainTabControl.SuspendLayout();
             this.projectSettings.SuspendLayout();
             this.gbxRemarks.SuspendLayout();
             this.gbxToolsTestEquip.SuspendLayout();
             this.gbxGeneralSettings.SuspendLayout();
             this.tableEditor.SuspendLayout();
-            this.toolStripMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.toolStripMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // GroupNo
@@ -326,9 +325,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxGeneralSettings.BackColor = System.Drawing.Color.DarkGray;
             this.gbxGeneralSettings.Controls.Add(this.lblTMname);
-            this.gbxGeneralSettings.Controls.Add(this.txtTMname);
             this.gbxGeneralSettings.Controls.Add(this.lblTMnumber);
-            this.gbxGeneralSettings.Controls.Add(this.txtTMnumber);
             this.gbxGeneralSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbxGeneralSettings.ForeColor = System.Drawing.Color.MidnightBlue;
             this.gbxGeneralSettings.Location = new System.Drawing.Point(15, 10);
@@ -347,15 +344,6 @@
             this.lblTMname.TabIndex = 2;
             this.lblTMname.Text = "TM Name/Title:";
             // 
-            // txtTMname
-            // 
-            this.txtTMname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTMname.Location = new System.Drawing.Point(391, 23);
-            this.txtTMname.Name = "txtTMname";
-            this.txtTMname.Size = new System.Drawing.Size(755, 20);
-            this.txtTMname.TabIndex = 3;
-            // 
             // lblTMnumber
             // 
             this.lblTMnumber.AutoSize = true;
@@ -364,13 +352,6 @@
             this.lblTMnumber.Size = new System.Drawing.Size(66, 13);
             this.lblTMnumber.TabIndex = 0;
             this.lblTMnumber.Text = "TM Number:";
-            // 
-            // txtTMnumber
-            // 
-            this.txtTMnumber.Location = new System.Drawing.Point(90, 23);
-            this.txtTMnumber.Name = "txtTMnumber";
-            this.txtTMnumber.Size = new System.Drawing.Size(207, 20);
-            this.txtTMnumber.TabIndex = 1;
             // 
             // tableEditor
             // 
@@ -382,6 +363,17 @@
             this.tableEditor.TabIndex = 1;
             this.tableEditor.Text = "MAC Table Editor";
             this.tableEditor.UseVisualStyleBackColor = true;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.LargeChange = 100;
+            this.trackBar1.Location = new System.Drawing.Point(6, 6);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar1.Size = new System.Drawing.Size(45, 512);
+            this.trackBar1.SmallChange = 40;
+            this.trackBar1.TabIndex = 0;
+            this.trackBar1.TickFrequency = 3;
             // 
             // tabPage1
             // 
@@ -425,52 +417,52 @@
             // newFileToolStripMenuItem
             // 
             this.newFileToolStripMenuItem.Name = "newFileToolStripMenuItem";
-            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.newFileToolStripMenuItem.Text = "&New";
             this.newFileToolStripMenuItem.Click += new System.EventHandler(this.NewFileToolStripMenuItem_Click);
             // 
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.openFileToolStripMenuItem.Text = "&Open";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.OpenFileToolStripMenuItem_Click);
             // 
             // importTMtoolStripMenuItem
             // 
             this.importTMtoolStripMenuItem.Name = "importTMtoolStripMenuItem";
-            this.importTMtoolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.importTMtoolStripMenuItem.Text = "Import XML TM File";
+            this.importTMtoolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.importTMtoolStripMenuItem.Text = "Import TM (.xml)";
             this.importTMtoolStripMenuItem.Click += new System.EventHandler(this.ImportTMtoolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(176, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(161, 6);
             // 
             // saveFileToolStripMenuItem
             // 
             this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
-            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.saveFileToolStripMenuItem.Text = "&Save";
             this.saveFileToolStripMenuItem.Click += new System.EventHandler(this.SaveFileToolStripMenuItem_Click);
             // 
             // saveAsFileToolStripMenuItem
             // 
             this.saveAsFileToolStripMenuItem.Name = "saveAsFileToolStripMenuItem";
-            this.saveAsFileToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.saveAsFileToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.saveAsFileToolStripMenuItem.Text = "Save &As...";
             this.saveAsFileToolStripMenuItem.Click += new System.EventHandler(this.SaveAsFileToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(176, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(161, 6);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.quitToolStripMenuItem.Text = "&Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
             // 
@@ -538,27 +530,30 @@
             this.lblVersionNum.Text = "Version: 0.1a";
             this.lblVersionNum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // trackBar1
+            // lblProjectName
             // 
-            this.trackBar1.LargeChange = 100;
-            this.trackBar1.Location = new System.Drawing.Point(6, 6);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(45, 512);
-            this.trackBar1.SmallChange = 40;
-            this.trackBar1.TabIndex = 0;
-            this.trackBar1.TickFrequency = 3;
+            this.lblProjectName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblProjectName.AutoSize = true;
+            this.lblProjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProjectName.Location = new System.Drawing.Point(556, 4);
+            this.lblProjectName.Name = "lblProjectName";
+            this.lblProjectName.Size = new System.Drawing.Size(108, 18);
+            this.lblProjectName.TabIndex = 3;
+            this.lblProjectName.Text = "Untitled Project";
+            this.lblProjectName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmMacDevMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 605);
+            this.Controls.Add(this.lblProjectName);
             this.Controls.Add(this.lblVersionNum);
             this.Controls.Add(this.toolStripMenu);
             this.Controls.Add(this.MainTabControl);
             this.MinimumSize = new System.Drawing.Size(1240, 600);
             this.Name = "FrmMacDevMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TRG Maintenance Allocation Chart Development Tool";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainTabControl.ResumeLayout(false);
@@ -569,9 +564,9 @@
             this.gbxGeneralSettings.PerformLayout();
             this.tableEditor.ResumeLayout(false);
             this.tableEditor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,7 +597,6 @@
         private System.Windows.Forms.Label lblVersionNum;
         private System.Windows.Forms.GroupBox gbxGeneralSettings;
         private System.Windows.Forms.Label lblTMnumber;
-        private System.Windows.Forms.TextBox txtTMnumber;
         private System.Windows.Forms.GroupBox gbxToolsTestEquip;
         private System.Windows.Forms.GroupBox gbxRemarks;
         private System.Windows.Forms.Button btnAddToolTest;
@@ -610,7 +604,6 @@
         private System.Windows.Forms.Button btnClearToolList;
         private System.Windows.Forms.Button btnEditTool;
         private System.Windows.Forms.Label lblTMname;
-        private System.Windows.Forms.TextBox txtTMname;
         private System.Windows.Forms.ListBox lbxToolTestEquipList;
         private System.Windows.Forms.Button btnMoveToolUp;
         private System.Windows.Forms.Button btnMoveToolDown;
@@ -624,6 +617,7 @@
         private System.Windows.Forms.Button btnDeleteRemark;
         private System.Windows.Forms.ToolStripMenuItem importTMtoolStripMenuItem;
         private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label lblProjectName;
     }
 }
 

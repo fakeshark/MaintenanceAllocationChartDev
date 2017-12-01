@@ -37,7 +37,23 @@ namespace MaintenanceAllocationChartDeveloper
 
         private void NewFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Clear all lists and variables to start a new project
+            //Clear all lists and variables, prompt user to name new project
+            //ClearAllForNewProject();
+
+            // Create a new instance of the Form2 class
+            Form2 createNewProjectForm = new Form2();
+
+            if (createNewProjectForm.ShowDialog() == DialogResult.OK)
+            {
+                lblProjectName.Text = createNewProjectForm.ProjectName;
+                lblProjectName.Left = (this.ClientSize.Width - lblProjectName.Size.Width) / 2;
+            }
+
+        }
+
+        private void ClearAllForNewProject()
+        {
+
         }
 
         private void OpenFileToolStripMenuItem_Click(object sender, EventArgs e)
