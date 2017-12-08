@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MaintenanceAllocationChartDeveloper
 {
     public partial class FrmMacDevMain : Form
     {
+        OpenFileDialog fileSelected;
         public FrmMacDevMain()
         {
             InitializeComponent();
@@ -59,6 +61,15 @@ namespace MaintenanceAllocationChartDeveloper
         private void OpenFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Open save file to load existing project
+
+            fileSelected = new OpenFileDialog();
+            fileSelected.Filter = "All Files (*.*)|*.*|Text Files (*.txt)|*.txt|XML Files (*.xml)|*.xml|SGML Files (*.sgml)|*.sgml";
+            fileSelected.Multiselect = false;
+
+            if (fileSelected.ShowDialog() == DialogResult.OK)
+            {
+                // read in data from save file
+            }
         }
 
         private void ImportTMtoolStripMenuItem_Click(object sender, EventArgs e)
