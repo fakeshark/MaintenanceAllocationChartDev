@@ -32,16 +32,16 @@
             this.rbtnMaintLvlMaint = new System.Windows.Forms.RadioButton();
             this.gbxMaintLvl = new System.Windows.Forms.GroupBox();
             this.rbtnDepotMaintLvl = new System.Windows.Forms.RadioButton();
-            this.rbtnBelowDepotMaintLvl = new System.Windows.Forms.RadioButton();
             this.rbtnSRAMaintLvl = new System.Windows.Forms.RadioButton();
+            this.rbtnBelowDepotMaintLvl = new System.Windows.Forms.RadioButton();
             this.gbxNSN = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblNSN = new System.Windows.Forms.Label();
+            this.txtNSNnumber = new System.Windows.Forms.TextBox();
             this.gbxToolNum = new System.Windows.Forms.GroupBox();
             this.lblToolNum = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtToolNumber = new System.Windows.Forms.TextBox();
             this.gbxNomenclature = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbNomenclature = new System.Windows.Forms.RichTextBox();
             this.btnAddTool = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.gbxMaintLvl.SuspendLayout();
@@ -96,16 +96,6 @@
             this.rbtnDepotMaintLvl.Text = "Depot Maintenance";
             this.rbtnDepotMaintLvl.UseVisualStyleBackColor = true;
             // 
-            // rbtnBelowDepotMaintLvl
-            // 
-            this.rbtnBelowDepotMaintLvl.AutoSize = true;
-            this.rbtnBelowDepotMaintLvl.Location = new System.Drawing.Point(25, 69);
-            this.rbtnBelowDepotMaintLvl.Name = "rbtnBelowDepotMaintLvl";
-            this.rbtnBelowDepotMaintLvl.Size = new System.Drawing.Size(151, 17);
-            this.rbtnBelowDepotMaintLvl.TabIndex = 4;
-            this.rbtnBelowDepotMaintLvl.Text = "Below Depot Maintenance";
-            this.rbtnBelowDepotMaintLvl.UseVisualStyleBackColor = true;
-            // 
             // rbtnSRAMaintLvl
             // 
             this.rbtnSRAMaintLvl.AutoSize = true;
@@ -116,23 +106,26 @@
             this.rbtnSRAMaintLvl.Text = "Specialized Repair Activity (SRA)";
             this.rbtnSRAMaintLvl.UseVisualStyleBackColor = true;
             // 
+            // rbtnBelowDepotMaintLvl
+            // 
+            this.rbtnBelowDepotMaintLvl.AutoSize = true;
+            this.rbtnBelowDepotMaintLvl.Location = new System.Drawing.Point(25, 69);
+            this.rbtnBelowDepotMaintLvl.Name = "rbtnBelowDepotMaintLvl";
+            this.rbtnBelowDepotMaintLvl.Size = new System.Drawing.Size(151, 17);
+            this.rbtnBelowDepotMaintLvl.TabIndex = 4;
+            this.rbtnBelowDepotMaintLvl.Text = "Below Depot Maintenance";
+            this.rbtnBelowDepotMaintLvl.UseVisualStyleBackColor = true;
+            // 
             // gbxNSN
             // 
             this.gbxNSN.Controls.Add(this.lblNSN);
-            this.gbxNSN.Controls.Add(this.textBox1);
+            this.gbxNSN.Controls.Add(this.txtNSNnumber);
             this.gbxNSN.Location = new System.Drawing.Point(247, 12);
             this.gbxNSN.Name = "gbxNSN";
             this.gbxNSN.Size = new System.Drawing.Size(469, 72);
             this.gbxNSN.TabIndex = 4;
             this.gbxNSN.TabStop = false;
             this.gbxNSN.Text = "National Stock Number (NSN): ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(142, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 20);
-            this.textBox1.TabIndex = 0;
             // 
             // lblNSN
             // 
@@ -144,10 +137,17 @@
             this.lblNSN.TabIndex = 1;
             this.lblNSN.Text = "Ex: 6625-01-336-3372";
             // 
+            // txtNSNnumber
+            // 
+            this.txtNSNnumber.Location = new System.Drawing.Point(142, 28);
+            this.txtNSNnumber.Name = "txtNSNnumber";
+            this.txtNSNnumber.Size = new System.Drawing.Size(300, 20);
+            this.txtNSNnumber.TabIndex = 0;
+            // 
             // gbxToolNum
             // 
             this.gbxToolNum.Controls.Add(this.lblToolNum);
-            this.gbxToolNum.Controls.Add(this.textBox2);
+            this.gbxToolNum.Controls.Add(this.txtToolNumber);
             this.gbxToolNum.Location = new System.Drawing.Point(247, 90);
             this.gbxToolNum.Name = "gbxToolNum";
             this.gbxToolNum.Size = new System.Drawing.Size(469, 72);
@@ -165,16 +165,16 @@
             this.lblToolNum.TabIndex = 1;
             this.lblToolNum.Text = "Ex: 77-4BN";
             // 
-            // textBox2
+            // txtToolNumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(142, 28);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(300, 20);
-            this.textBox2.TabIndex = 0;
+            this.txtToolNumber.Location = new System.Drawing.Point(142, 28);
+            this.txtToolNumber.Name = "txtToolNumber";
+            this.txtToolNumber.Size = new System.Drawing.Size(300, 20);
+            this.txtToolNumber.TabIndex = 0;
             // 
             // gbxNomenclature
             // 
-            this.gbxNomenclature.Controls.Add(this.richTextBox1);
+            this.gbxNomenclature.Controls.Add(this.rtbNomenclature);
             this.gbxNomenclature.Location = new System.Drawing.Point(12, 168);
             this.gbxNomenclature.Name = "gbxNomenclature";
             this.gbxNomenclature.Size = new System.Drawing.Size(704, 157);
@@ -182,13 +182,13 @@
             this.gbxNomenclature.TabStop = false;
             this.gbxNomenclature.Text = "Nomenclature: ";
             // 
-            // richTextBox1
+            // rtbNomenclature
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(25, 24);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(652, 118);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "Ex: MULTIMETER";
+            this.rtbNomenclature.Location = new System.Drawing.Point(15, 22);
+            this.rtbNomenclature.Name = "rtbNomenclature";
+            this.rtbNomenclature.Size = new System.Drawing.Size(673, 118);
+            this.rtbNomenclature.TabIndex = 0;
+            this.rtbNomenclature.Text = "";
             // 
             // btnAddTool
             // 
@@ -198,6 +198,7 @@
             this.btnAddTool.TabIndex = 7;
             this.btnAddTool.Text = "Add Tool/Test Equipment";
             this.btnAddTool.UseVisualStyleBackColor = true;
+            this.btnAddTool.Click += new System.EventHandler(this.BtnAddTool_Click);
             // 
             // btnCancel
             // 
@@ -243,12 +244,12 @@
         private System.Windows.Forms.RadioButton rbtnSRAMaintLvl;
         private System.Windows.Forms.GroupBox gbxNSN;
         private System.Windows.Forms.Label lblNSN;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNSNnumber;
         private System.Windows.Forms.GroupBox gbxToolNum;
         private System.Windows.Forms.Label lblToolNum;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtToolNumber;
         private System.Windows.Forms.GroupBox gbxNomenclature;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbNomenclature;
         private System.Windows.Forms.Button btnAddTool;
         private System.Windows.Forms.Button btnCancel;
     }

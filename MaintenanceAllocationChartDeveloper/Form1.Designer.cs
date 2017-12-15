@@ -265,6 +265,7 @@
             this.btnMoveToolUp.TabIndex = 7;
             this.btnMoveToolUp.Text = "Up";
             this.btnMoveToolUp.UseVisualStyleBackColor = true;
+            this.btnMoveToolUp.Click += new System.EventHandler(this.BtnMoveToolUp_Click);
             // 
             // btnMoveToolDown
             // 

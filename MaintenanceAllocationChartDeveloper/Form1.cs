@@ -14,6 +14,8 @@ namespace MaintenanceAllocationChartDeveloper
     public partial class FrmMacDevMain : Form
     {
         OpenFileDialog fileSelected;
+        string nomen;
+
         public FrmMacDevMain()
         {
             InitializeComponent();
@@ -110,12 +112,18 @@ namespace MaintenanceAllocationChartDeveloper
 
         private void BtnAddToolTest_Click(object sender, EventArgs e)
         {
-            Form3 createNewProjectForm = new Form3();
+            Form3 addNewToolTest = new Form3();
 
-            if (createNewProjectForm.ShowDialog() == DialogResult.OK)
+            if (addNewToolTest.ShowDialog() == DialogResult.OK)
             {
-                // do stuff
+                //add values to array list and display in 'lbxToolTestEquipList'
+                nomen = addNewToolTest.NomenclatureValue;
             }
+        }
+
+        private void BtnMoveToolUp_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
