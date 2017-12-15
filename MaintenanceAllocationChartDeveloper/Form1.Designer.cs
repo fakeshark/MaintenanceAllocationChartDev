@@ -318,6 +318,7 @@
             this.btnAddToolTest.TabIndex = 1;
             this.btnAddToolTest.Text = "+  Add Tool / Test Equipment";
             this.btnAddToolTest.UseVisualStyleBackColor = true;
+            this.btnAddToolTest.Click += new System.EventHandler(this.BtnAddToolTest_Click);
             // 
             // gbxGeneralSettings
             // 

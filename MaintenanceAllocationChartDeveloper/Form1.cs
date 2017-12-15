@@ -63,7 +63,7 @@ namespace MaintenanceAllocationChartDeveloper
             //Open save file to load existing project
 
             fileSelected = new OpenFileDialog();
-            fileSelected.Filter = "All Files (*.*)|*.*|Text Files (*.txt)|*.txt|XML Files (*.xml)|*.xml|SGML Files (*.sgml)|*.sgml";
+            fileSelected.Filter = "All Files (*.*)|*.*|MAC Developer Project Files (*.macx)|*.macx";
             fileSelected.Multiselect = false;
 
             if (fileSelected.ShowDialog() == DialogResult.OK)
@@ -106,6 +106,16 @@ namespace MaintenanceAllocationChartDeveloper
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Popup with info about the company, developer
+        }
+
+        private void BtnAddToolTest_Click(object sender, EventArgs e)
+        {
+            Form3 createNewProjectForm = new Form3();
+
+            if (createNewProjectForm.ShowDialog() == DialogResult.OK)
+            {
+                // do stuff
+            }
         }
     }
 }
