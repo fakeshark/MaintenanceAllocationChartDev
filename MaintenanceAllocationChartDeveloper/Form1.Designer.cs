@@ -54,7 +54,6 @@
             this.lblTMname = new System.Windows.Forms.Label();
             this.lblTMnumber = new System.Windows.Forms.Label();
             this.tableEditor = new System.Windows.Forms.TabPage();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.fileToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
@@ -79,8 +78,6 @@
             this.gbxRemarks.SuspendLayout();
             this.gbxToolsTestEquip.SuspendLayout();
             this.gbxGeneralSettings.SuspendLayout();
-            this.tableEditor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.toolStripMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -357,7 +354,6 @@
             // 
             // tableEditor
             // 
-            this.tableEditor.Controls.Add(this.trackBar1);
             this.tableEditor.Location = new System.Drawing.Point(4, 22);
             this.tableEditor.Name = "tableEditor";
             this.tableEditor.Padding = new System.Windows.Forms.Padding(3);
@@ -365,17 +361,6 @@
             this.tableEditor.TabIndex = 1;
             this.tableEditor.Text = "MAC Table Editor";
             this.tableEditor.UseVisualStyleBackColor = true;
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.LargeChange = 100;
-            this.trackBar1.Location = new System.Drawing.Point(6, 6);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(45, 512);
-            this.trackBar1.SmallChange = 40;
-            this.trackBar1.TabIndex = 0;
-            this.trackBar1.TickFrequency = 3;
             // 
             // tabPage1
             // 
@@ -564,9 +549,6 @@
             this.gbxToolsTestEquip.ResumeLayout(false);
             this.gbxGeneralSettings.ResumeLayout(false);
             this.gbxGeneralSettings.PerformLayout();
-            this.tableEditor.ResumeLayout(false);
-            this.tableEditor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -618,7 +600,6 @@
         private System.Windows.Forms.Button btnClearRemarkList;
         private System.Windows.Forms.Button btnDeleteRemark;
         private System.Windows.Forms.ToolStripMenuItem importTMtoolStripMenuItem;
-        private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label lblProjectName;
     }
 }

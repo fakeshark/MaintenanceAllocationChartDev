@@ -56,10 +56,10 @@
             this.rbtnCrewLvlMaint.Checked = true;
             this.rbtnCrewLvlMaint.Location = new System.Drawing.Point(25, 19);
             this.rbtnCrewLvlMaint.Name = "rbtnCrewLvlMaint";
-            this.rbtnCrewLvlMaint.Size = new System.Drawing.Size(114, 17);
+            this.rbtnCrewLvlMaint.Size = new System.Drawing.Size(160, 17);
             this.rbtnCrewLvlMaint.TabIndex = 1;
             this.rbtnCrewLvlMaint.TabStop = true;
-            this.rbtnCrewLvlMaint.Text = "Crew Maintenance";
+            this.rbtnCrewLvlMaint.Text = "Crew/Operator Maintenance";
             this.rbtnCrewLvlMaint.UseVisualStyleBackColor = true;
             // 
             // rbtnMaintLvlMaint
@@ -192,6 +192,7 @@
             // 
             // btnAddTool
             // 
+            this.btnAddTool.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAddTool.Location = new System.Drawing.Point(535, 335);
             this.btnAddTool.Name = "btnAddTool";
             this.btnAddTool.Size = new System.Drawing.Size(181, 23);
@@ -221,6 +222,7 @@
             this.Controls.Add(this.gbxToolNum);
             this.Controls.Add(this.gbxNSN);
             this.Controls.Add(this.gbxMaintLvl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Tool/Test Equipment";

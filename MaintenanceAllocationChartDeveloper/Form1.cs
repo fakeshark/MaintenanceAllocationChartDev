@@ -14,7 +14,7 @@ namespace MaintenanceAllocationChartDeveloper
     public partial class FrmMacDevMain : Form
     {
         OpenFileDialog fileSelected;
-        string nomen;
+
 
         public FrmMacDevMain()
         {
@@ -113,11 +113,20 @@ namespace MaintenanceAllocationChartDeveloper
         private void BtnAddToolTest_Click(object sender, EventArgs e)
         {
             Form3 addNewToolTest = new Form3();
+            string nomen;
+            string nsn;
+            string toolNum;
+            string maintLvl;
 
             if (addNewToolTest.ShowDialog() == DialogResult.OK)
             {
                 //add values to array list and display in 'lbxToolTestEquipList'
                 nomen = addNewToolTest.NomenclatureValue;
+                nsn = addNewToolTest.NSNvalue;
+                toolNum = addNewToolTest.ToolNumberValue;
+                maintLvl = addNewToolTest.MaintLevelValue;
+
+        MessageBox.Show("Maintenance Level:   " + maintLvl + "\nNSN Number: " + nsn + "\nTool Number: " + toolNum + "\nNomenclature: " + nomen, "test");
             }
         }
 

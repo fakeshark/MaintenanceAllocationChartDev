@@ -80,6 +80,7 @@
             this.Controls.Add(this.lblProjectName);
             this.Controls.Add(this.btnNewProjectCreate);
             this.Controls.Add(this.btnNewProjectCancel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";
