@@ -94,8 +94,8 @@ namespace MaintenanceAllocationChartDeveloper
 
         private bool ValidateThisForm()
         {
-            string errorMessage = "";
-            string maintLvl = "";
+            string errorMessage = string.Empty;
+            string maintLvl = string.Empty;
             string regexNsnPatternWithDashes = @"(\d{4}-?\d{2}-?\d{3}-?\d{4})"; //  1234-12-123-1234 (with dashes)
             string regexNsnPatternNoDashes = @"(\d{13})"; //  1234121231234 (without dashes)
 
@@ -136,7 +136,31 @@ namespace MaintenanceAllocationChartDeveloper
                 {
                     errorMessage += "NSN is improperly formatted.\n";
                 }
-                //todo: add dashes if none are present
+                else if (noDashesMatch.Success)
+                {
+                    // Add dashes if none exist
+                    //todo: refactor this method to use regex for inserting dashes
+
+                    char[] NSNCharArr = txtNSNnumber.Text.Trim().ToUpper().ToCharArray();
+
+                    for (int i = 0; i < NSNCharArr.Length; i++)
+                    {
+                        string dash = "";
+                        if (i == 3 || i == 5 || i == 8)
+                        {
+                            dash = "-";
+                        }
+                        else
+                        {
+                            dash = "";
+                        }
+                        NSNvalue += NSNCharArr[i] + dash;
+                    }
+                }
+                else
+                {
+                    NSNvalue = txtNSNnumber.Text.Trim();
+                }
             }
 
             if (txtToolNumber.Text.Trim() == "" || txtToolNumber.Text.Trim() == null)
@@ -157,7 +181,7 @@ namespace MaintenanceAllocationChartDeveloper
             else
             {
                 NomenclatureValue = rtbNomenclature.Text.Trim().ToUpper();
-                NSNvalue = txtNSNnumber.Text.Trim().ToUpper();
+                //NSNvalue = txtNSNnumber.Text.Trim().ToUpper();
                 ToolNumberValue = txtToolNumber.Text.Trim().ToUpper();
                 MaintLevelValue = maintLvl;
                 return true;
