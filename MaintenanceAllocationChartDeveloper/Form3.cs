@@ -96,6 +96,7 @@ namespace MaintenanceAllocationChartDeveloper
         {
             string errorMessage = string.Empty;
             string maintLvl = string.Empty;
+            NSNvalue = string.Empty;
             string regexNsnPatternWithDashes = @"(\d{4}-?\d{2}-?\d{3}-?\d{4})"; //  1234-12-123-1234 (with dashes)
             string regexNsnPatternNoDashes = @"(\d{13})"; //  1234121231234 (without dashes)
 

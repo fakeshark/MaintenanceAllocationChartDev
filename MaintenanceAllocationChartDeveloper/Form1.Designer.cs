@@ -43,6 +43,7 @@
             this.btnClearRemarkList = new System.Windows.Forms.Button();
             this.btnDeleteRemark = new System.Windows.Forms.Button();
             this.gbxToolsTestEquip = new System.Windows.Forms.GroupBox();
+            this.lbxToolsTestEq = new System.Windows.Forms.ListBox();
             this.btnMoveToolUp = new System.Windows.Forms.Button();
             this.btnMoveToolDown = new System.Windows.Forms.Button();
             this.btnDeleteTool = new System.Windows.Forms.Button();
@@ -72,7 +73,6 @@
             this.saveQuitToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.lblVersionNum = new System.Windows.Forms.Label();
             this.lblProjectName = new System.Windows.Forms.Label();
-            this.lbxToolsTestEq = new System.Windows.Forms.ListBox();
             this.MainTabControl.SuspendLayout();
             this.projectSettings.SuspendLayout();
             this.gbxRemarks.SuspendLayout();
@@ -243,6 +243,17 @@
             this.gbxToolsTestEquip.TabStop = false;
             this.gbxToolsTestEquip.Text = "Tools and Test Equipment:";
             // 
+            // lbxToolsTestEq
+            // 
+            this.lbxToolsTestEq.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbxToolsTestEq.FormattingEnabled = true;
+            this.lbxToolsTestEq.Location = new System.Drawing.Point(6, 53);
+            this.lbxToolsTestEq.Name = "lbxToolsTestEq";
+            this.lbxToolsTestEq.Size = new System.Drawing.Size(566, 329);
+            this.lbxToolsTestEq.TabIndex = 8;
+            // 
             // btnMoveToolUp
             // 
             this.btnMoveToolUp.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
@@ -263,6 +274,7 @@
             this.btnMoveToolDown.TabIndex = 6;
             this.btnMoveToolDown.Text = "Down";
             this.btnMoveToolDown.UseVisualStyleBackColor = true;
+            this.btnMoveToolDown.Click += new System.EventHandler(this.BtnMoveToolDown_Click);
             // 
             // btnDeleteTool
             // 
@@ -285,6 +297,7 @@
             this.btnClearToolList.TabIndex = 3;
             this.btnClearToolList.Text = "Clear List";
             this.btnClearToolList.UseVisualStyleBackColor = true;
+            this.btnClearToolList.Click += new System.EventHandler(this.BtnClearToolList_Click);
             // 
             // btnEditTool
             // 
@@ -518,17 +531,6 @@
             this.lblProjectName.TabIndex = 3;
             this.lblProjectName.Text = "Untitled Project";
             this.lblProjectName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbxToolsTestEq
-            // 
-            this.lbxToolsTestEq.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbxToolsTestEq.FormattingEnabled = true;
-            this.lbxToolsTestEq.Location = new System.Drawing.Point(6, 53);
-            this.lbxToolsTestEq.Name = "lbxToolsTestEq";
-            this.lbxToolsTestEq.Size = new System.Drawing.Size(566, 329);
-            this.lbxToolsTestEq.TabIndex = 8;
             // 
             // FrmMacDevMain
             // 

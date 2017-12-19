@@ -146,7 +146,61 @@ namespace MaintenanceAllocationChartDeveloper
 
         private void BtnMoveToolUp_Click(object sender, EventArgs e)
         {
+            //make sure a list item is selected
+            if (lbxToolsTestEq.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a tool or test equipment item first.");
+            }
+            else
+            {
+                if (lbxToolsTestEq.SelectedIndex != 0)
+                {
+                    string upperItem = toolTestEquipList[lbxToolsTestEq.SelectedIndex - 1].ToString();
+                    string lowerItem = toolTestEquipList[lbxToolsTestEq.SelectedIndex].ToString();
+                    string tempContainer = upperItem;
+                    int selectedItemIndex = lbxToolsTestEq.SelectedIndex - 1;
 
+                    toolTestEquipList[lbxToolsTestEq.SelectedIndex - 1] = lowerItem;
+                    toolTestEquipList[lbxToolsTestEq.SelectedIndex] = tempContainer;
+                    UpdateLists();
+                    lbxToolsTestEq.SetSelected(selectedItemIndex, true);
+                }
+                
+            }
+
+
+        }
+
+        private void BtnMoveToolDown_Click(object sender, EventArgs e)
+        {
+            //make sure a list item is selected
+            if (lbxToolsTestEq.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a tool or test equipment item first.");
+            }
+            else
+            {
+                if (lbxToolsTestEq.SelectedIndex != lbxToolsTestEq.Items.Count - 1)
+                {
+                    string upperItem = toolTestEquipList[lbxToolsTestEq.SelectedIndex + 1].ToString();
+                    string lowerItem = toolTestEquipList[lbxToolsTestEq.SelectedIndex].ToString();
+                    string tempContainer = upperItem;
+                    int selectedItemIndex = lbxToolsTestEq.SelectedIndex + 1;
+
+                    toolTestEquipList[lbxToolsTestEq.SelectedIndex + 1] = lowerItem;
+                    toolTestEquipList[lbxToolsTestEq.SelectedIndex] = tempContainer;
+                    UpdateLists();
+                    lbxToolsTestEq.SetSelected(selectedItemIndex, true);
+                }
+
+            }
+        }
+
+        private void BtnClearToolList_Click(object sender, EventArgs e)
+        {
+            //lbxToolsTestEq.Items.Clear();
+            toolTestEquipList.Clear();
+            UpdateLists();
         }
     }
 }
