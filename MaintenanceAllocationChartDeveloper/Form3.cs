@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -95,6 +96,8 @@ namespace MaintenanceAllocationChartDeveloper
         {
             string errorMessage = "";
             string maintLvl = "";
+            string regexNsnPatternWithDashes = @"(\d{4}-?\d{2}-?\d{3}-?\d{4})"; //  1234-12-123-1234 (with dashes)
+            string regexNsnPatternNoDashes = @"(\d{13})"; //  1234121231234 (without dashes)
 
             if (rbtnCrewLvlMaint.Checked)
             {
@@ -121,10 +124,19 @@ namespace MaintenanceAllocationChartDeveloper
                 maintLvl = "SRA";
             }
 
-
             if (txtNSNnumber.Text.Trim() == "" || txtNSNnumber.Text.Trim() == null)
             {
                 errorMessage += "NSN field must contain a value.\n";
+            }
+            else
+            {
+                Match dashesMatch = Regex.Match(txtNSNnumber.Text.Trim(), regexNsnPatternWithDashes);
+                Match noDashesMatch = Regex.Match(txtNSNnumber.Text.Trim(), regexNsnPatternNoDashes);
+                if (!dashesMatch.Success && !noDashesMatch.Success)
+                {
+                    errorMessage += "NSN is improperly formatted.\n";
+                }
+                //todo: add dashes if none are present
             }
 
             if (txtToolNumber.Text.Trim() == "" || txtToolNumber.Text.Trim() == null)

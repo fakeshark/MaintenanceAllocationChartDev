@@ -43,7 +43,6 @@
             this.btnClearRemarkList = new System.Windows.Forms.Button();
             this.btnDeleteRemark = new System.Windows.Forms.Button();
             this.gbxToolsTestEquip = new System.Windows.Forms.GroupBox();
-            this.lbxToolTestEquipList = new System.Windows.Forms.ListBox();
             this.btnMoveToolUp = new System.Windows.Forms.Button();
             this.btnMoveToolDown = new System.Windows.Forms.Button();
             this.btnDeleteTool = new System.Windows.Forms.Button();
@@ -73,6 +72,7 @@
             this.saveQuitToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.lblVersionNum = new System.Windows.Forms.Label();
             this.lblProjectName = new System.Windows.Forms.Label();
+            this.lbxToolsTestEq = new System.Windows.Forms.ListBox();
             this.MainTabControl.SuspendLayout();
             this.projectSettings.SuspendLayout();
             this.gbxRemarks.SuspendLayout();
@@ -228,7 +228,7 @@
             // 
             this.gbxToolsTestEquip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.gbxToolsTestEquip.Controls.Add(this.lbxToolTestEquipList);
+            this.gbxToolsTestEquip.Controls.Add(this.lbxToolsTestEq);
             this.gbxToolsTestEquip.Controls.Add(this.btnMoveToolUp);
             this.gbxToolsTestEquip.Controls.Add(this.btnMoveToolDown);
             this.gbxToolsTestEquip.Controls.Add(this.btnDeleteTool);
@@ -242,16 +242,6 @@
             this.gbxToolsTestEquip.TabIndex = 3;
             this.gbxToolsTestEquip.TabStop = false;
             this.gbxToolsTestEquip.Text = "Tools and Test Equipment:";
-            // 
-            // lbxToolTestEquipList
-            // 
-            this.lbxToolTestEquipList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbxToolTestEquipList.FormattingEnabled = true;
-            this.lbxToolTestEquipList.Location = new System.Drawing.Point(6, 54);
-            this.lbxToolTestEquipList.Name = "lbxToolTestEquipList";
-            this.lbxToolTestEquipList.Size = new System.Drawing.Size(565, 329);
-            this.lbxToolTestEquipList.TabIndex = 8;
             // 
             // btnMoveToolUp
             // 
@@ -529,6 +519,17 @@
             this.lblProjectName.Text = "Untitled Project";
             this.lblProjectName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbxToolsTestEq
+            // 
+            this.lbxToolsTestEq.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbxToolsTestEq.FormattingEnabled = true;
+            this.lbxToolsTestEq.Location = new System.Drawing.Point(6, 53);
+            this.lbxToolsTestEq.Name = "lbxToolsTestEq";
+            this.lbxToolsTestEq.Size = new System.Drawing.Size(566, 329);
+            this.lbxToolsTestEq.TabIndex = 8;
+            // 
             // FrmMacDevMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -588,7 +589,6 @@
         private System.Windows.Forms.Button btnClearToolList;
         private System.Windows.Forms.Button btnEditTool;
         private System.Windows.Forms.Label lblTMname;
-        private System.Windows.Forms.ListBox lbxToolTestEquipList;
         private System.Windows.Forms.Button btnMoveToolUp;
         private System.Windows.Forms.Button btnMoveToolDown;
         private System.Windows.Forms.TabPage tabPage1;
@@ -601,6 +601,7 @@
         private System.Windows.Forms.Button btnDeleteRemark;
         private System.Windows.Forms.ToolStripMenuItem importTMtoolStripMenuItem;
         private System.Windows.Forms.Label lblProjectName;
+        private System.Windows.Forms.ListBox lbxToolsTestEq;
     }
 }
 

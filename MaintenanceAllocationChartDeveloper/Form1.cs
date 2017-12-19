@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 using System.IO;
 
 namespace MaintenanceAllocationChartDeveloper
@@ -14,7 +15,7 @@ namespace MaintenanceAllocationChartDeveloper
     public partial class FrmMacDevMain : Form
     {
         OpenFileDialog fileSelected;
-
+        ArrayList toolTestEquipList = new ArrayList();
 
         public FrmMacDevMain()
         {
@@ -126,7 +127,20 @@ namespace MaintenanceAllocationChartDeveloper
                 toolNum = addNewToolTest.ToolNumberValue;
                 maintLvl = addNewToolTest.MaintLevelValue;
 
-        MessageBox.Show("Maintenance Level:   " + maintLvl + "\nNSN Number: " + nsn + "\nTool Number: " + toolNum + "\nNomenclature: " + nomen, "test");
+                //todo: add validation that item about to be entered isn't already on the list
+
+                toolTestEquipList.Add("Maint. Level:   " + maintLvl + "\tNSN: " + nsn + "\tTool #: " + toolNum + "\tNomenclature: " + nomen);
+                UpdateLists();
+            }
+        }
+
+        private void UpdateLists()
+        {
+            lbxToolsTestEq.Items.Clear();
+
+            for (int i = 0; i < toolTestEquipList.Count; i++)
+            {
+                lbxToolsTestEq.Items.Add(toolTestEquipList[i]);
             }
         }
 
