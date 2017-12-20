@@ -127,10 +127,18 @@ namespace MaintenanceAllocationChartDeveloper
                 toolNum = addNewToolTest.ToolNumberValue;
                 maintLvl = addNewToolTest.MaintLevelValue;
 
-                //todo: add validation that item about to be entered isn't already on the list
+                string addItem = ("Maint. Level:   " + maintLvl + "\tNSN: " + nsn + "\tTool #: " + toolNum + "\tNomenclature: " + nomen);
 
-                toolTestEquipList.Add("Maint. Level:   " + maintLvl + "\tNSN: " + nsn + "\tTool #: " + toolNum + "\tNomenclature: " + nomen);
-                UpdateLists();
+                //validate that item about to be entered isn't already on the list
+                if (!toolTestEquipList.Contains(addItem))
+                {
+                    toolTestEquipList.Add(addItem);
+                    UpdateLists();
+                }
+                else
+                {
+                    MessageBox.Show("Sorry, this item is already on the list!", "Duplicate Item");
+                }
             }
         }
 
@@ -164,11 +172,8 @@ namespace MaintenanceAllocationChartDeveloper
                     toolTestEquipList[lbxToolsTestEq.SelectedIndex] = tempContainer;
                     UpdateLists();
                     lbxToolsTestEq.SetSelected(selectedItemIndex, true);
-                }
-                
+                }                
             }
-
-
         }
 
         private void BtnMoveToolDown_Click(object sender, EventArgs e)
@@ -192,13 +197,11 @@ namespace MaintenanceAllocationChartDeveloper
                     UpdateLists();
                     lbxToolsTestEq.SetSelected(selectedItemIndex, true);
                 }
-
             }
         }
 
         private void BtnClearToolList_Click(object sender, EventArgs e)
         {
-            //lbxToolsTestEq.Items.Clear();
             toolTestEquipList.Clear();
             UpdateLists();
         }
