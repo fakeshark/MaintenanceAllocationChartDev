@@ -17,6 +17,10 @@ namespace MaintenanceAllocationChartDeveloper
         private string nsnValue;
         private string toolNumberValue;
         private string maintLevelValue;
+        private string passedMaintLvl;
+        private string passedNSN;
+        private string passedToolNum;
+        private string passedNomen;
 
         #region Getters & Setters
 
@@ -75,6 +79,43 @@ namespace MaintenanceAllocationChartDeveloper
             InitializeComponent();
         }
 
+        //constructor for editing existing list item
+        public Form3(string maintLvl, string nsn, string toolNum, string nomen)
+        {
+            InitializeComponent();
+
+            this.passedNSN = maintLvl;
+            this.passedNSN = nsn;
+            this.passedToolNum = toolNum;
+            this.passedNomen = nomen;
+
+            this.Text = "Edit Tool / Test Equipment";
+            if (maintLvl == "CREW")
+            {
+                rbtnCrewLvlMaint.Checked = true;
+            }
+            else if (maintLvl == "MAINTAINER")
+            {
+                rbtnMaintLvlMaint.Checked = true;
+            }
+            else if (maintLvl == "BELOW DEPOT")
+            {
+                rbtnBelowDepotMaintLvl.Checked = true;
+            }
+            else if (maintLvl == "DEPOT")
+            {
+                rbtnDepotMaintLvl.Checked = true;
+            }
+            else if (maintLvl == "SRA")
+            {
+                rbtnSRAMaintLvl.Checked = true;
+            }
+
+            txtNSNnumber.Text = nsn;
+            txtToolNumber.Text = toolNum;
+            rtbNomenclature.Text = nomen;
+        }
+
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -94,6 +135,7 @@ namespace MaintenanceAllocationChartDeveloper
 
         private bool ValidateThisForm()
         {
+            //todo: Add validation for NSN length
             string errorMessage = string.Empty;
             string maintLvl = string.Empty;
             NSNvalue = string.Empty;
@@ -176,13 +218,12 @@ namespace MaintenanceAllocationChartDeveloper
 
             if (errorMessage != "")
             {
-                MessageBox.Show(errorMessage, "Missing Required Information.");
+                MessageBox.Show(errorMessage, "Missing/Invalid Data");
                 return false;
             }
             else
             {
                 NomenclatureValue = rtbNomenclature.Text.Trim().ToUpper();
-                //NSNvalue = txtNSNnumber.Text.Trim().ToUpper();
                 ToolNumberValue = txtToolNumber.Text.Trim().ToUpper();
                 MaintLevelValue = maintLvl;
                 return true;

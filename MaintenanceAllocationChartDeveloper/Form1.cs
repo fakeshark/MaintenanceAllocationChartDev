@@ -16,10 +16,13 @@ namespace MaintenanceAllocationChartDeveloper
     {
         OpenFileDialog fileSelected;
         ArrayList toolTestEquipList = new ArrayList();
+        string[] addItem;
 
         public FrmMacDevMain()
         {
             InitializeComponent();
+            this.dgvToolTestEquipment.RowsDefaultCellStyle.BackColor = Color.Gainsboro;
+            this.dgvToolTestEquipment.AlternatingRowsDefaultCellStyle.BackColor =  Color.Silver;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -127,83 +130,63 @@ namespace MaintenanceAllocationChartDeveloper
                 toolNum = addNewToolTest.ToolNumberValue;
                 maintLvl = addNewToolTest.MaintLevelValue;
 
-                string addItem = ("Maint. Level:   " + maintLvl + "\tNSN: " + nsn + "\tTool #: " + toolNum + "\tNomenclature: " + nomen);
-
-                //validate that item about to be entered isn't already on the list
-                if (!toolTestEquipList.Contains(addItem))
-                {
-                    toolTestEquipList.Add(addItem);
-                    UpdateLists();
-                }
-                else
-                {
-                    MessageBox.Show("Sorry, this item is already on the list!", "Duplicate Item");
-                }
+                addItem = new string[] { maintLvl, nsn, toolNum, nomen };
+                dgvToolTestEquipment.Rows.Add(addItem[0], addItem[1], addItem[2], addItem[3]);
             }
         }
 
         private void UpdateLists()
         {
-            lbxToolsTestEq.Items.Clear();
 
-            for (int i = 0; i < toolTestEquipList.Count; i++)
-            {
-                lbxToolsTestEq.Items.Add(toolTestEquipList[i]);
-            }
         }
 
         private void BtnMoveToolUp_Click(object sender, EventArgs e)
         {
-            //make sure a list item is selected
-            if (lbxToolsTestEq.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please select a tool or test equipment item first.");
-            }
-            else
-            {
-                if (lbxToolsTestEq.SelectedIndex != 0)
-                {
-                    string upperItem = toolTestEquipList[lbxToolsTestEq.SelectedIndex - 1].ToString();
-                    string lowerItem = toolTestEquipList[lbxToolsTestEq.SelectedIndex].ToString();
-                    string tempContainer = upperItem;
-                    int selectedItemIndex = lbxToolsTestEq.SelectedIndex - 1;
 
-                    toolTestEquipList[lbxToolsTestEq.SelectedIndex - 1] = lowerItem;
-                    toolTestEquipList[lbxToolsTestEq.SelectedIndex] = tempContainer;
-                    UpdateLists();
-                    lbxToolsTestEq.SetSelected(selectedItemIndex, true);
-                }                
-            }
         }
 
         private void BtnMoveToolDown_Click(object sender, EventArgs e)
         {
-            //make sure a list item is selected
-            if (lbxToolsTestEq.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please select a tool or test equipment item first.");
-            }
-            else
-            {
-                if (lbxToolsTestEq.SelectedIndex != lbxToolsTestEq.Items.Count - 1)
-                {
-                    string upperItem = toolTestEquipList[lbxToolsTestEq.SelectedIndex + 1].ToString();
-                    string lowerItem = toolTestEquipList[lbxToolsTestEq.SelectedIndex].ToString();
-                    string tempContainer = upperItem;
-                    int selectedItemIndex = lbxToolsTestEq.SelectedIndex + 1;
 
-                    toolTestEquipList[lbxToolsTestEq.SelectedIndex + 1] = lowerItem;
-                    toolTestEquipList[lbxToolsTestEq.SelectedIndex] = tempContainer;
-                    UpdateLists();
-                    lbxToolsTestEq.SetSelected(selectedItemIndex, true);
-                }
-            }
         }
 
         private void BtnClearToolList_Click(object sender, EventArgs e)
         {
-            toolTestEquipList.Clear();
-            UpdateLists();
+            if (dgvToolTestEquipment.Rows.Count == 1)
+            {
+                MessageBox.Show("Data table empty. No list data to clear.", "Clear List Failed");
+            }
+            else
+            {
+                DialogResult clearListResult = MessageBox.Show("Are you sure you want to clear the entire tool/test equipment list?", "Clear List?", MessageBoxButtons.OKCancel);
+                if (clearListResult == DialogResult.OK)
+                {
+                    dgvToolTestEquipment.Rows.Clear();
+                }
+            }
+        }
+
+        private void BtnDeleteTool_Click(object sender, EventArgs e)
+        {
+            if (dgvToolTestEquipment.Rows.Count == 1)
+            {
+                MessageBox.Show("Data table empty. No rows to delete.", "Delete Row Failed");
+            }
+            else
+            {
+                //todo: make delete row functionality
+            }
+        }
+
+        private void BtnEditTool_Click(object sender, EventArgs e)
+        {
+            //todo: get data from selected list item and pass it into Form3 for editing
+
+            Form3 addNewToolTest = new Form3("Crew", "test NSN", "test Tool Number", "test Nomenclaure");
+            if (addNewToolTest.ShowDialog() == DialogResult.OK)
+            {
+                //todo: make edited data update the selected list item
+            }
         }
     }
 }

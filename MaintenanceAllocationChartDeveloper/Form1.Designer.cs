@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMacDevMain));
             this.GroupNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CompAssy = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -35,6 +37,7 @@
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.projectSettings = new System.Windows.Forms.TabPage();
             this.gbxRemarks = new System.Windows.Forms.GroupBox();
+            this.dgvToolTestEquipment = new System.Windows.Forms.DataGridView();
             this.lbxRemarksList = new System.Windows.Forms.ListBox();
             this.btnAddRemark = new System.Windows.Forms.Button();
             this.btnMoveRemarkUp = new System.Windows.Forms.Button();
@@ -43,7 +46,6 @@
             this.btnClearRemarkList = new System.Windows.Forms.Button();
             this.btnDeleteRemark = new System.Windows.Forms.Button();
             this.gbxToolsTestEquip = new System.Windows.Forms.GroupBox();
-            this.lbxToolsTestEq = new System.Windows.Forms.ListBox();
             this.btnMoveToolUp = new System.Windows.Forms.Button();
             this.btnMoveToolDown = new System.Windows.Forms.Button();
             this.btnDeleteTool = new System.Windows.Forms.Button();
@@ -73,9 +75,14 @@
             this.saveQuitToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.lblVersionNum = new System.Windows.Forms.Label();
             this.lblProjectName = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MainTabControl.SuspendLayout();
             this.projectSettings.SuspendLayout();
             this.gbxRemarks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvToolTestEquipment)).BeginInit();
             this.gbxToolsTestEquip.SuspendLayout();
             this.gbxGeneralSettings.SuspendLayout();
             this.toolStripMenu.SuspendLayout();
@@ -145,6 +152,28 @@
             this.gbxRemarks.TabIndex = 4;
             this.gbxRemarks.TabStop = false;
             this.gbxRemarks.Text = "Remarks:";
+            // 
+            // dgvToolTestEquipment
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvToolTestEquipment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvToolTestEquipment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvToolTestEquipment.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvToolTestEquipment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvToolTestEquipment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dgvToolTestEquipment.Location = new System.Drawing.Point(6, 54);
+            this.dgvToolTestEquipment.Name = "dgvToolTestEquipment";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvToolTestEquipment.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvToolTestEquipment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvToolTestEquipment.Size = new System.Drawing.Size(566, 328);
+            this.dgvToolTestEquipment.TabIndex = 16;
             // 
             // lbxRemarksList
             // 
@@ -228,7 +257,7 @@
             // 
             this.gbxToolsTestEquip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.gbxToolsTestEquip.Controls.Add(this.lbxToolsTestEq);
+            this.gbxToolsTestEquip.Controls.Add(this.dgvToolTestEquipment);
             this.gbxToolsTestEquip.Controls.Add(this.btnMoveToolUp);
             this.gbxToolsTestEquip.Controls.Add(this.btnMoveToolDown);
             this.gbxToolsTestEquip.Controls.Add(this.btnDeleteTool);
@@ -243,17 +272,6 @@
             this.gbxToolsTestEquip.TabStop = false;
             this.gbxToolsTestEquip.Text = "Tools and Test Equipment:";
             // 
-            // lbxToolsTestEq
-            // 
-            this.lbxToolsTestEq.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbxToolsTestEq.FormattingEnabled = true;
-            this.lbxToolsTestEq.Location = new System.Drawing.Point(6, 53);
-            this.lbxToolsTestEq.Name = "lbxToolsTestEq";
-            this.lbxToolsTestEq.Size = new System.Drawing.Size(566, 329);
-            this.lbxToolsTestEq.TabIndex = 8;
-            // 
             // btnMoveToolUp
             // 
             this.btnMoveToolUp.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
@@ -261,6 +279,7 @@
             this.btnMoveToolUp.Name = "btnMoveToolUp";
             this.btnMoveToolUp.Size = new System.Drawing.Size(54, 30);
             this.btnMoveToolUp.TabIndex = 7;
+            this.btnMoveToolUp.Tag = "-1";
             this.btnMoveToolUp.Text = "Up";
             this.btnMoveToolUp.UseVisualStyleBackColor = true;
             this.btnMoveToolUp.Click += new System.EventHandler(this.BtnMoveToolUp_Click);
@@ -272,6 +291,7 @@
             this.btnMoveToolDown.Name = "btnMoveToolDown";
             this.btnMoveToolDown.Size = new System.Drawing.Size(54, 30);
             this.btnMoveToolDown.TabIndex = 6;
+            this.btnMoveToolDown.Tag = "1";
             this.btnMoveToolDown.Text = "Down";
             this.btnMoveToolDown.UseVisualStyleBackColor = true;
             this.btnMoveToolDown.Click += new System.EventHandler(this.BtnMoveToolDown_Click);
@@ -286,6 +306,7 @@
             this.btnDeleteTool.TabIndex = 4;
             this.btnDeleteTool.Text = "Delete Selected Item";
             this.btnDeleteTool.UseVisualStyleBackColor = true;
+            this.btnDeleteTool.Click += new System.EventHandler(this.BtnDeleteTool_Click);
             // 
             // btnClearToolList
             // 
@@ -309,6 +330,7 @@
             this.btnEditTool.TabIndex = 2;
             this.btnEditTool.Text = "Edit Selected Item";
             this.btnEditTool.UseVisualStyleBackColor = true;
+            this.btnEditTool.Click += new System.EventHandler(this.BtnEditTool_Click);
             // 
             // btnAddToolTest
             // 
@@ -532,6 +554,35 @@
             this.lblProjectName.Text = "Untitled Project";
             this.lblProjectName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Maintenance Level";
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "NSN";
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Tool Number";
+            this.Column3.Name = "Column3";
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.HeaderText = "Nomenclature";
+            this.Column4.Name = "Column4";
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // FrmMacDevMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,6 +600,7 @@
             this.MainTabControl.ResumeLayout(false);
             this.projectSettings.ResumeLayout(false);
             this.gbxRemarks.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvToolTestEquipment)).EndInit();
             this.gbxToolsTestEquip.ResumeLayout(false);
             this.gbxGeneralSettings.ResumeLayout(false);
             this.gbxGeneralSettings.PerformLayout();
@@ -603,7 +655,11 @@
         private System.Windows.Forms.Button btnDeleteRemark;
         private System.Windows.Forms.ToolStripMenuItem importTMtoolStripMenuItem;
         private System.Windows.Forms.Label lblProjectName;
-        private System.Windows.Forms.ListBox lbxToolsTestEq;
+        private System.Windows.Forms.DataGridView dgvToolTestEquipment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
 

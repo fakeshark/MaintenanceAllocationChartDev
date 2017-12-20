@@ -140,6 +140,7 @@
             // txtNSNnumber
             // 
             this.txtNSNnumber.Location = new System.Drawing.Point(142, 28);
+            this.txtNSNnumber.MaxLength = 16;
             this.txtNSNnumber.Name = "txtNSNnumber";
             this.txtNSNnumber.Size = new System.Drawing.Size(300, 20);
             this.txtNSNnumber.TabIndex = 0;
