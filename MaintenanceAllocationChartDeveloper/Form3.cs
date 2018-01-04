@@ -80,7 +80,7 @@ namespace MaintenanceAllocationChartDeveloper
         }
 
         //constructor for editing existing list item
-        public Form3(string maintLvl, string nsn, string toolNum, string nomen)
+        public Form3(string maintLvl, string nsn, string toolNum, string nomen, int rowIndex)
         {
             InitializeComponent();
 

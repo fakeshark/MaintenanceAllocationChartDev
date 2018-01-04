@@ -180,9 +180,15 @@ namespace MaintenanceAllocationChartDeveloper
 
         private void BtnEditTool_Click(object sender, EventArgs e)
         {
-            //todo: get data from selected list item and pass it into Form3 for editing
+            //todo: get selected row index data from selected list item and pass it into Form3 for editing
+            string maintLevel = dgvToolTestEquipment.SelectedCells[0].FormattedValue.ToString();
+            string nsn = dgvToolTestEquipment.SelectedCells[1].FormattedValue.ToString();
+            string toolNum = dgvToolTestEquipment.SelectedCells[2].FormattedValue.ToString();
+            string nomen = dgvToolTestEquipment.SelectedCells[3].FormattedValue.ToString();
+            int rowIndex = dgvToolTestEquipment.SelectedCells[0].RowIndex;
 
-            Form3 addNewToolTest = new Form3("Crew", "test NSN", "test Tool Number", "test Nomenclaure");
+
+            Form3 addNewToolTest = new Form3(maintLevel, nsn, toolNum, nomen, rowIndex);
             if (addNewToolTest.ShowDialog() == DialogResult.OK)
             {
                 //todo: make edited data update the selected list item
